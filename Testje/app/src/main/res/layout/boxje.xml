@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="100dp"
+    android:layout_height="match_parent"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:orientation="vertical" >
+
+
+    <TextView
+        android:id="@+id/name"
+        android:textStyle="bold"
+        android:text="name"
+        android:fontFamily="@font/customfont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+     />
+
+    <ImageView
+        android:id="@+id/pic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        />
+    <TextView
+        android:id="@+id/details"
+        android:fontFamily="@font/customfont"
+        android:layout_width="wrap_content"
+        android:text="details"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:layout_marginTop="8dp"
+    />
+    <TextView
+        android:id="@+id/hotels"
+        android:fontFamily="@font/customfont"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nog details"
+        android:layout_marginTop="8dp"
+        android:textColor="#c2185b"
+     />
+
+    <Button
+        android:id="@+id/NavigatieButton"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:text="NAVIGEER" />
+
+
+</LinearLayout>
