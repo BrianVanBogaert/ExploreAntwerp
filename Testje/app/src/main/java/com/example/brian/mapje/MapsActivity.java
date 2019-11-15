@@ -28,6 +28,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
+
+        //====================LOCATIE OPVRAGEN========================
+        // Construct a GeoDataClient.
+
+
+
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -45,29 +52,28 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      * installed Google Play services and returned to the app.
      */
     @Override
-    public void onMapReady(GoogleMap googleMap) {
+    public void onMapReady(GoogleMap googleMap)
+    {
         mMap = googleMap;
-
 
         LatLng mas = new LatLng(51.2289, 4.4048203);
         LatLng steen = new LatLng(51.2227238, 4.3973637);
 
-        MarkerOptions markerOptions = new MarkerOptions();
-        markerOptions.position(mas)
+        MarkerOptions markerOptionsMas = new MarkerOptions();
+        markerOptionsMas.position(mas)
                 .title("MAS ANTWERPEN")
                 .snippet("Het mas is een museum over de stad en de haven van Antwerpen Het heeft 10 verdiepingen en een indrukwekkende architectuur. De prijs voor een kaartje is dan ook niet te duur. Rijmen is fijn maar bezoeken zou plezanter zijn")
                 .icon(BitmapDescriptorFactory.defaultMarker( BitmapDescriptorFactory.HUE_RED));
 
-        InfoWindowData info = new InfoWindowData();
-        info.setImage("masfoto");
-        info.setHotel("Hotel : kei goei hotels in de buurt");
+        InfoWindowData masinfo = new InfoWindowData();
+        masinfo.setImage("masfoto");
+        masinfo.setHotel("Hotel : kei goei hotels in de buurt");
 
 
         CustomInfoWindowGoogleMap customInfoWindow = new CustomInfoWindowGoogleMap(this);
         mMap.setInfoWindowAdapter(customInfoWindow);
-
-        Marker m = mMap.addMarker(markerOptions);
-        m.setTag(info);
+        Marker m = mMap.addMarker(markerOptionsMas);
+        m.setTag(masinfo);
         m.showInfoWindow();
 
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));

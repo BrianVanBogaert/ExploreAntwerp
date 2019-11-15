@@ -45,9 +45,6 @@ public class CustomInfoWindowGoogleMap implements GoogleMap.InfoWindowAdapter
         img.setImageResource(imageId);
 
         hotel_tv.setText(infoWindowData.getHotel());
-
-
-
         return view;
     }
 }
