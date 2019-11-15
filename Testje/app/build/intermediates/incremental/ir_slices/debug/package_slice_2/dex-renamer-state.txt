@@ -1,0 +1,4 @@
+#Fri Nov 15 08:48:53 CET 2019
+base.0=D\:\\AP Updated\\2-EA (2)\\Mobile\\ExploreAntwerp\\Testje\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\2
+path.0=classes.dex
+renamed.0=classes.dex

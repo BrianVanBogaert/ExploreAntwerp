@@ -1,0 +1,199 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:1-42:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\appcompat-1.1.0.aar\d71126c3c18117270c386ac9aad0a29c\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:17:1-38:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0.aar\4b0d6dfc00d436319dfd4e82920a2ae9\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\appcompat-resources-1.1.0.aar\d21a5114688012a7e2d66534fc46a856\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0.aar\17d3b4cf19d1aa87a60b2079aa1fe4ce\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.1.0.aar\c12c9fc8c4b7fd32245f00ae7c345b1d\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.1.0.aar\1708290864e2012490856645f8e90eb5\AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\e488f3e149e7b7fce84b9e324193c53c\AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\5734935b45ba2607c07d53a4e16ec390\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\368b5641dfb2a0afb889e4d1dcdb546f\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\fragment-1.1.0.aar\4df5858504c17f913f4462bfac4888d5\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\8ccee1c17c70097b3ced6710199a1579\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\customview-1.0.0.aar\790ae47eb91286fb70ec42195684129f\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0.aar\9a02444cacebeb8bf2799d9e28cadfc2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\loader-1.0.0.aar\d4d4c15b956c4f6c60e723aa11b81daa\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\activity-1.0.0.aar\da2f547aecba6f6c713e11cd857c7405\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\savedstate-1.0.0.aar\3754e3c156ba4fb2ef18d1e7beb97be3\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-2.0.0.aar\1bc3ceed6b5c7323052556e0d1aa2267\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0.aar\ba2eeee5b52e011c2619f2fe7551ecf6\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\0a5f9449871fa3a2b1c920403fb62db0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\e593d17320dd723b4594c1535093bc6b\AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\ef1e013841b3e60a8795141102ce03e6\AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.1.0.aar\503d59c5f9ab0cf80d4004f92103b7a8\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.1.0.aar\f9bb507360d150d3b1d223cfb0e4ebeb\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:1-42:12
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:1-42:12
+	package
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:4:5-38
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:1-42:12
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+	xmlns:tools
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:1-42:12
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:2:11-69
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:10:5-79
+	android:name
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:10:22-76
+application
+ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:12:5-40:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\e488f3e149e7b7fce84b9e324193c53c\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\e488f3e149e7b7fce84b9e324193c53c\AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\5734935b45ba2607c07d53a4e16ec390\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\5734935b45ba2607c07d53a4e16ec390\AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\368b5641dfb2a0afb889e4d1dcdb546f\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\368b5641dfb2a0afb889e4d1dcdb546f\AndroidManifest.xml:22:5-26:19
+MERGED from [androidx.core:core:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\e593d17320dd723b4594c1535093bc6b\AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\e593d17320dd723b4594c1535093bc6b\AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\ef1e013841b3e60a8795141102ce03e6\AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\ef1e013841b3e60a8795141102ce03e6\AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\e593d17320dd723b4594c1535093bc6b\AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:17:9-35
+	android:label
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:15:9-41
+	android:roundIcon
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:16:9-54
+	android:icon
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:14:9-43
+	android:allowBackup
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:13:9-35
+	android:theme
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:18:9-40
+meta-data#com.google.android.geo.API_KEY
+ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:27:9-29:55
+	android:value
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:29:13-52
+	android:name
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:28:13-58
+activity#com.example.brian.mapje.MapsActivity
+ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:31:9-39:20
+	android:label
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:33:13-56
+	android:name
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:32:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:34:13-38:29
+action#android.intent.action.MAIN
+ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:35:17-69
+	android:name
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:35:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:37:17-77
+	android:name
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml:37:27-74
+uses-sdk
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\appcompat-1.1.0.aar\d71126c3c18117270c386ac9aad0a29c\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\appcompat-1.1.0.aar\d71126c3c18117270c386ac9aad0a29c\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0.aar\4b0d6dfc00d436319dfd4e82920a2ae9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\cursoradapter-1.0.0.aar\4b0d6dfc00d436319dfd4e82920a2ae9\AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\appcompat-resources-1.1.0.aar\d21a5114688012a7e2d66534fc46a856\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\appcompat-resources-1.1.0.aar\d21a5114688012a7e2d66534fc46a856\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0.aar\17d3b4cf19d1aa87a60b2079aa1fe4ce\AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\drawerlayout-1.0.0.aar\17d3b4cf19d1aa87a60b2079aa1fe4ce\AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.1.0.aar\c12c9fc8c4b7fd32245f00ae7c345b1d\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\vectordrawable-animated-1.1.0.aar\c12c9fc8c4b7fd32245f00ae7c345b1d\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.1.0.aar\1708290864e2012490856645f8e90eb5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\vectordrawable-1.1.0.aar\1708290864e2012490856645f8e90eb5\AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\e488f3e149e7b7fce84b9e324193c53c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\e488f3e149e7b7fce84b9e324193c53c\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\5734935b45ba2607c07d53a4e16ec390\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-tasks-17.0.0.aar\5734935b45ba2607c07d53a4e16ec390\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\368b5641dfb2a0afb889e4d1dcdb546f\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\368b5641dfb2a0afb889e4d1dcdb546f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\fragment-1.1.0.aar\4df5858504c17f913f4462bfac4888d5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\fragment-1.1.0.aar\4df5858504c17f913f4462bfac4888d5\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\8ccee1c17c70097b3ced6710199a1579\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\viewpager-1.0.0.aar\8ccee1c17c70097b3ced6710199a1579\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\customview-1.0.0.aar\790ae47eb91286fb70ec42195684129f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\customview-1.0.0.aar\790ae47eb91286fb70ec42195684129f\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0.aar\9a02444cacebeb8bf2799d9e28cadfc2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\interpolator-1.0.0.aar\9a02444cacebeb8bf2799d9e28cadfc2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\loader-1.0.0.aar\d4d4c15b956c4f6c60e723aa11b81daa\AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\loader-1.0.0.aar\d4d4c15b956c4f6c60e723aa11b81daa\AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\activity-1.0.0.aar\da2f547aecba6f6c713e11cd857c7405\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\activity-1.0.0.aar\da2f547aecba6f6c713e11cd857c7405\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\savedstate-1.0.0.aar\3754e3c156ba4fb2ef18d1e7beb97be3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\savedstate-1.0.0.aar\3754e3c156ba4fb2ef18d1e7beb97be3\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-2.0.0.aar\1bc3ceed6b5c7323052556e0d1aa2267\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-2.0.0.aar\1bc3ceed6b5c7323052556e0d1aa2267\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0.aar\ba2eeee5b52e011c2619f2fe7551ecf6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-livedata-core-2.0.0.aar\ba2eeee5b52e011c2619f2fe7551ecf6\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\0a5f9449871fa3a2b1c920403fb62db0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\core-runtime-2.0.0.aar\0a5f9449871fa3a2b1c920403fb62db0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\e593d17320dd723b4594c1535093bc6b\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\core-1.1.0.aar\e593d17320dd723b4594c1535093bc6b\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\ef1e013841b3e60a8795141102ce03e6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\versionedparcelable-1.1.0.aar\ef1e013841b3e60a8795141102ce03e6\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.1.0.aar\503d59c5f9ab0cf80d4004f92103b7a8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-runtime-2.1.0.aar\503d59c5f9ab0cf80d4004f92103b7a8\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.1.0.aar\f9bb507360d150d3b1d223cfb0e4ebeb\AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\lifecycle-viewmodel-2.1.0.aar\f9bb507360d150d3b1d223cfb0e4ebeb\AndroidManifest.xml:20:5-44
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+		ADDED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+		INJECTED from D:\AP Updated\2-EA (2)\Mobile\ExploreAntwerp\Testje\app\src\main\AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:23:22-76
+uses-permission#android.permission.INTERNET
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:24:22-64
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:28:9-32
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-maps-17.0.0.aar\3131ed83f267c28ffe0e28bf9a880c90\AndroidManifest.xml:34:13-50
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\e488f3e149e7b7fce84b9e324193c53c\AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\e488f3e149e7b7fce84b9e324193c53c\AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\e488f3e149e7b7fce84b9e324193c53c\AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\play-services-base-17.0.0.aar\e488f3e149e7b7fce84b9e324193c53c\AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\368b5641dfb2a0afb889e4d1dcdb546f\AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\368b5641dfb2a0afb889e4d1dcdb546f\AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\brian\.gradle\caches\transforms-1\files-1.1\jetified-play-services-basement-17.0.0.aar\368b5641dfb2a0afb889e4d1dcdb546f\AndroidManifest.xml:24:13-58
