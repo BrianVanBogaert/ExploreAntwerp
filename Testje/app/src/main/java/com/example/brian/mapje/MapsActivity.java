@@ -1,13 +1,23 @@
 package com.example.brian.mapje;
 
 import androidx.fragment.app.FragmentActivity;
+
+import android.app.VoiceInteractor;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.app.Activity;
 import android.content.Context;
+import android.view.textclassifier.TextLinks;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -17,6 +27,11 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.gson.JsonObject;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
@@ -31,9 +46,50 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         //====================LOCATIE OPVRAGEN========================
         // Construct a GeoDataClient.
+        RequestQueue gerequest=Volley.newRequestQueue(this); //REST API voor THIS activity
+
+        String URL = "https://geodata.antwerpen.be/arcgissql/rest/services/P_Portal/portal_publiek3/MapServer/207/query?where=1%3D1&outFields=Naam,BeschermingDetails&outSR=4326&f=json";
+        JsonObjectRequest objectRequest = new JsonObjectRequest(
+                Request.Method.GET,
+                URL,
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                            Log.i("Rest response", response.toString());
+                        try {
+                            JSONArray jsonFeatureArray = response.getJSONArray("features");
+                            for(int i = 0; i < jsonFeatureArray.length(); i++)
+                            {
+                                JSONObject feature = jsonFeatureArray.getJSONObject(i);
+                                JSONArray jsonAttributeArray = feature.getJSONArray("attributes");
+                                for(int y = 0; y < jsonAttributeArray.length(); y++)
+                                {
+                                    JSONObject attributeObject = jsonFeatureArray.getJSONObject(y);
+                                    String Naam = attributeObject.getString("Naam");
+                                    Log.i("DE NAAM IS", Naam);
+                                }
 
 
 
+
+                            }
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        error.printStackTrace();
+                    }
+                }
+
+        );
+
+        gerequest.add(objectRequest);
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -84,6 +140,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onInfoWindowClick(Marker marker) { //zelf nog toe te voegen bij extends https://youtu.be/v4BrNgTEI6E?t=622
+
+    }
+
+    private  void jsonParse()
+    {
 
     }
 

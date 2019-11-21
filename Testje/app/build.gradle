@@ -25,6 +25,6 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.3.0-alpha02'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0-alpha02'
-    compile 'com.google.code.gson:gson:2.4' //zelf toegevoegd
-    compile 'com.android.volley:volley:1.1.0' //zelf toegevoegd
+    compile 'com.google.code.gson:gson:2.4' //zelf toegevoegd REST API
+    compile 'com.android.volley:volley:1.1.0' //zelf toegevoegd REST API
 }
