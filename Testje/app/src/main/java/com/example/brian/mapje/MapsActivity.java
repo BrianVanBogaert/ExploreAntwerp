@@ -59,7 +59,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                            Log.i("Rest response", response.toString());
+                            Log.i("Rest response", response.toString()); //Dit werkt
                         try {
                             JSONArray jsonFeatureArray = response.getJSONArray("features"); //features is de grootste table waar we in moeten zoeken (zie jsonviewer.stack.hu)
                             for(int i = 0; i < jsonFeatureArray.length(); i++)
@@ -70,7 +70,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 {
                                     JSONObject attributeObject = jsonFeatureArray.getJSONObject(y);
                                     String Naam = attributeObject.getString("Naam"); //met elks hun naam (zie jsonviewer.stack.hu)
-                                    Log.i("DE NAAM IS", Naam);
+                                    Log.i("DE NAAM IS", Naam); //dikke error
                                 }
                             }
 
