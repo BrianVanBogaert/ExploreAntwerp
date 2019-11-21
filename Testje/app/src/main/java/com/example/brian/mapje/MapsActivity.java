@@ -49,6 +49,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         RequestQueue gerequest=Volley.newRequestQueue(this); //REST API voor THIS activity
 
         String URL = "https://geodata.antwerpen.be/arcgissql/rest/services/P_Portal/portal_publiek3/MapServer/207/query?where=1%3D1&outFields=Naam,BeschermingDetails&outSR=4326&f=json";
+        //BELANGRIJK!!!
+        //copy de code in http://jsonviewer.stack.hu om de structuur van deze json te zien
+
         JsonObjectRequest objectRequest = new JsonObjectRequest(
                 Request.Method.GET,
                 URL,
@@ -58,21 +61,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     public void onResponse(JSONObject response) {
                             Log.i("Rest response", response.toString());
                         try {
-                            JSONArray jsonFeatureArray = response.getJSONArray("features");
+                            JSONArray jsonFeatureArray = response.getJSONArray("features"); //features is de grootste table waar we in moeten zoeken (zie jsonviewer.stack.hu)
                             for(int i = 0; i < jsonFeatureArray.length(); i++)
                             {
                                 JSONObject feature = jsonFeatureArray.getJSONObject(i);
-                                JSONArray jsonAttributeArray = feature.getJSONArray("attributes");
+                                JSONArray jsonAttributeArray = feature.getJSONArray("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
                                 for(int y = 0; y < jsonAttributeArray.length(); y++)
                                 {
                                     JSONObject attributeObject = jsonFeatureArray.getJSONObject(y);
-                                    String Naam = attributeObject.getString("Naam");
+                                    String Naam = attributeObject.getString("Naam"); //met elks hun naam (zie jsonviewer.stack.hu)
                                     Log.i("DE NAAM IS", Naam);
                                 }
-
-
-
-
                             }
 
                         } catch (JSONException e) {
