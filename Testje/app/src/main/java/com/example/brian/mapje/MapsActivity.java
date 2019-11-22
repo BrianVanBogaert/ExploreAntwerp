@@ -33,9 +33,15 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
     private GoogleMap mMap;
+    List<String> Monumenten = new ArrayList<String>();
+    List<String> Beschrijvingen = new ArrayList<String>();
+
 
 
 
@@ -64,10 +70,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             JSONArray jsonFeatureArray = response.getJSONArray("features"); //features is de grootste table waar we in moeten zoeken (zie jsonviewer.stack.hu)
                             for(int i = 0; i < jsonFeatureArray.length(); i++)
                             {
-                                JSONObject feature = jsonFeatureArray.getJSONObject(i);
+                                JSONObject feature = jsonFeatureArray.getJSONObject(i); //we vragen elk object op
+                                //============== ATTRIBUTES OPVRAGEN MET DE NAAM EN DE BESCHRIJVING ========================
                                 JSONObject attributeObject = feature.getJSONObject("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
                                     String Naam = attributeObject.getString("Naam"); //met elks hun naam (zie jsonviewer.stack.hu)
-                                    Log.i("DE NAAM IS", Naam); //dikke error
+                                    Log.i("Het monument", Naam);
+                                    Monumenten.add(Naam);
+                                    String BeschermingDetails = attributeObject.getString("BeschermingDetails");
+                                     Log.i("Details", BeschermingDetails);
+                                     Beschrijvingen.add(BeschermingDetails);
+                                //============== GEO OPVRAGEN  ========================
+                                JSONObject GeoObject = feature.getJSONObject("geometry");
+                                JSONArray VerzamelArray = GeoObject.getJSONArray("rings");
+                                JSONArray EersteGeoArray = VerzamelArray.getJSONArray(0).getJSONArray(0);
+
+                                Double Long = EersteGeoArray.getDouble(0);
+                                Log.i("Long", String.valueOf(Long));
+                                Double Lat = EersteGeoArray.getDouble(1);
+                                Log.i("Lat", String.valueOf(Lat));
+
                             }
 
                         } catch (JSONException e) {
