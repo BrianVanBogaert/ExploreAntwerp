@@ -65,13 +65,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             for(int i = 0; i < jsonFeatureArray.length(); i++)
                             {
                                 JSONObject feature = jsonFeatureArray.getJSONObject(i);
-                                JSONArray jsonAttributeArray = feature.getJSONArray("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
-                                for(int y = 0; y < jsonAttributeArray.length(); y++)
-                                {
-                                    JSONObject attributeObject = jsonFeatureArray.getJSONObject(y);
+                                JSONObject attributeObject = feature.getJSONObject("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
                                     String Naam = attributeObject.getString("Naam"); //met elks hun naam (zie jsonviewer.stack.hu)
                                     Log.i("DE NAAM IS", Naam); //dikke error
-                                }
                             }
 
                         } catch (JSONException e) {
