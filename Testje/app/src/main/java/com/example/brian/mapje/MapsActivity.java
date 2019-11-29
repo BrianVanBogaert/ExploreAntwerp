@@ -67,12 +67,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             JSONArray jsonFeatureArray = response.getJSONArray("features"); //features is de grootste table waar we in moeten zoeken (zie jsonviewer.stack.hu)
                             for(int i = 0; i < jsonFeatureArray.length(); i++)
                             {
-                                InfoWindowData object=null;
+                                InfoWindowData object= new InfoWindowData();
                                 JSONObject feature = jsonFeatureArray.getJSONObject(i); //we vragen elk object op
                                 //============== ATTRIBUTES OPVRAGEN MET DE NAAM EN DE BESCHRIJVING ========================
                                 JSONObject attributeObject = feature.getJSONObject("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
                                     String Naam = attributeObject.getString("Naam"); //met elks hun naam (zie jsonviewer.stack.hu)
-                                if(Naam != "huis")
+                                if(Naam == "huis") //ik wil geen 100 000 huizen
                                 {
                                     Log.i("Het monument", Naam);
                                     String BeschermingDetails = attributeObject.getString("BeschermingDetails");
@@ -92,6 +92,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     object.setLongitude(Long);
                                     object.setLatitude(Lat);
                                     monumenten.add(object);
+
+                                    Log.i("Hey object",monumenten.get(i).getNaam());
                                 }
 
 
