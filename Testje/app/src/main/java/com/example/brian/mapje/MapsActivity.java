@@ -41,6 +41,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private GoogleMap mMap;
     List<String> Monumenten = new ArrayList<String>();
     List<String> Beschrijvingen = new ArrayList<String>();
+    List<Double> Latitudes = new ArrayList<Double>();
+    List<Double> Longitudes = new ArrayList<Double>();
 
 
 
@@ -74,20 +76,24 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 //============== ATTRIBUTES OPVRAGEN MET DE NAAM EN DE BESCHRIJVING ========================
                                 JSONObject attributeObject = feature.getJSONObject("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
                                     String Naam = attributeObject.getString("Naam"); //met elks hun naam (zie jsonviewer.stack.hu)
+                                if(Naam != "huis")
+                                {
                                     Log.i("Het monument", Naam);
                                     Monumenten.add(Naam);
                                     String BeschermingDetails = attributeObject.getString("BeschermingDetails");
-                                     Log.i("Details", BeschermingDetails);
-                                     Beschrijvingen.add(BeschermingDetails);
-                                //============== GEO OPVRAGEN  ========================
-                                JSONObject GeoObject = feature.getJSONObject("geometry");
-                                JSONArray VerzamelArray = GeoObject.getJSONArray("rings");
-                                JSONArray EersteGeoArray = VerzamelArray.getJSONArray(0).getJSONArray(0);
+                                    Log.i("Details", BeschermingDetails);
+                                    Beschrijvingen.add(BeschermingDetails);
+                                    //============== GEO OPVRAGEN  ========================
+                                    JSONObject GeoObject = feature.getJSONObject("geometry");
+                                    JSONArray VerzamelArray = GeoObject.getJSONArray("rings");
+                                    JSONArray EersteGeoArray = VerzamelArray.getJSONArray(0).getJSONArray(0);
 
-                                Double Long = EersteGeoArray.getDouble(0);
-                                Log.i("Long", String.valueOf(Long));
-                                Double Lat = EersteGeoArray.getDouble(1);
-                                Log.i("Lat", String.valueOf(Lat));
+                                    Double Long = EersteGeoArray.getDouble(0);
+                                    Log.i("Long", String.valueOf(Long));
+                                    Double Lat = EersteGeoArray.getDouble(1);
+                                    Log.i("Lat", String.valueOf(Lat));
+                                }
+
 
                             }
 
