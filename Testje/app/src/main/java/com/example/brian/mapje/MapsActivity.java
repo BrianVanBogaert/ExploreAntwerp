@@ -72,7 +72,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 //============== ATTRIBUTES OPVRAGEN MET DE NAAM EN DE BESCHRIJVING ========================
                                 JSONObject attributeObject = feature.getJSONObject("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
                                     String Naam = attributeObject.getString("Naam"); //met elks hun naam (zie jsonviewer.stack.hu)
-                                if(Naam == "huis") //ik wil geen 100 000 huizen
+                                if(Naam != "huis") //ik wil geen 100 000 huizen
                                 {
                                     Log.i("Het monument", Naam);
                                     String BeschermingDetails = attributeObject.getString("BeschermingDetails");
@@ -155,6 +155,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Marker m = mMap.addMarker(markerOptionsMas);
         m.setTag(masinfo);
         m.showInfoWindow();
+
+
+        for (Object object : monumenten)
+        {
+            MarkerOptions objectoption = new MarkerOptions();
+            
+
+        }
+
 
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         //mMap.addMarker(new MarkerOptions().position(mas).title("Dit is het mas"));
