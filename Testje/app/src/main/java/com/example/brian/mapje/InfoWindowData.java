@@ -6,6 +6,7 @@ public class InfoWindowData
 {
     private String image;
     private String hotel;
+    private String beschrijving;
 
 
     public String getImage() {
@@ -21,7 +22,12 @@ public class InfoWindowData
         this.hotel = hotel;
     }
 
-
+    public String getBeschrijving() {
+        return beschrijving;
+    }
+    public void setBeschrijving(String beschrijving) {
+        this.hotel = beschrijving;
+    }
 
 
 }

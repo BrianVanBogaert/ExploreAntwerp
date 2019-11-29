@@ -88,9 +88,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     JSONArray VerzamelArray = GeoObject.getJSONArray("rings");
                                     JSONArray EersteGeoArray = VerzamelArray.getJSONArray(0).getJSONArray(0);
 
-                                    Double Long = EersteGeoArray.getDouble(0);
+                                    Double Long = EersteGeoArray.getDouble(1);
                                     Log.i("Long", String.valueOf(Long));
-                                    Double Lat = EersteGeoArray.getDouble(1);
+                                    Double Lat = EersteGeoArray.getDouble(0);
                                     Log.i("Lat", String.valueOf(Lat));
                                 }
 
