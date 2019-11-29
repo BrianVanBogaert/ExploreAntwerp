@@ -7,6 +7,9 @@ public class InfoWindowData
     private String image;
     private String hotel;
     private String beschrijving;
+    private String naam;
+    private double longitude;
+    private double latitude;
 
 
     public String getImage() {
@@ -15,6 +18,7 @@ public class InfoWindowData
     public void setImage(String image) {
         this.image = image;
     }
+
     public String getHotel() {
         return hotel;
     }
@@ -28,6 +32,30 @@ public class InfoWindowData
     public void setBeschrijving(String beschrijving) {
         this.hotel = beschrijving;
     }
+
+    public String getNaam() {
+        return naam;
+    }
+    public void setNaam(String naam) {
+        this.naam = naam;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+
+
 
 
 }

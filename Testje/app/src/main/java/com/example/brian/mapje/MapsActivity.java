@@ -39,16 +39,11 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
     private GoogleMap mMap;
-    List<String> Monumenten = new ArrayList<String>();
-    List<String> Beschrijvingen = new ArrayList<String>();
-    List<Double> Latitudes = new ArrayList<Double>();
-    List<Double> Longitudes = new ArrayList<Double>();
 
-
-
-
+    List<InfoWindowData> monumenten;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        monumenten = new ArrayList<>();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
 
@@ -72,6 +67,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                             JSONArray jsonFeatureArray = response.getJSONArray("features"); //features is de grootste table waar we in moeten zoeken (zie jsonviewer.stack.hu)
                             for(int i = 0; i < jsonFeatureArray.length(); i++)
                             {
+                                InfoWindowData object=null;
                                 JSONObject feature = jsonFeatureArray.getJSONObject(i); //we vragen elk object op
                                 //============== ATTRIBUTES OPVRAGEN MET DE NAAM EN DE BESCHRIJVING ========================
                                 JSONObject attributeObject = feature.getJSONObject("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
@@ -79,10 +75,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                 if(Naam != "huis")
                                 {
                                     Log.i("Het monument", Naam);
-                                    Monumenten.add(Naam);
                                     String BeschermingDetails = attributeObject.getString("BeschermingDetails");
                                     Log.i("Details", BeschermingDetails);
-                                    Beschrijvingen.add(BeschermingDetails);
                                     //============== GEO OPVRAGEN  ========================
                                     JSONObject GeoObject = feature.getJSONObject("geometry");
                                     JSONArray VerzamelArray = GeoObject.getJSONArray("rings");
@@ -92,6 +86,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                     Log.i("Long", String.valueOf(Long));
                                     Double Lat = EersteGeoArray.getDouble(0);
                                     Log.i("Lat", String.valueOf(Lat));
+
+                                    object.setNaam(Naam);
+                                    object.setBeschrijving(BeschermingDetails);
+                                    object.setLongitude(Long);
+                                    object.setLatitude(Lat);
+                                    monumenten.add(object);
                                 }
 
 
@@ -164,11 +164,4 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onInfoWindowClick(Marker marker) { //zelf nog toe te voegen bij extends https://youtu.be/v4BrNgTEI6E?t=622
 
     }
-
-    private  void jsonParse()
-    {
-
-    }
-
-
 }
