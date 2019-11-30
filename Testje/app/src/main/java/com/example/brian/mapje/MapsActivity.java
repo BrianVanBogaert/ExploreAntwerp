@@ -154,10 +154,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         Log.i("Size op dit moment", String.valueOf(monumenten.size())); //Volgens logs: 0???
-        for (int i = 0; i < monumenten.size(); i++)
+        for (int i = 0; i < 5; i++)
         {
+            Log.i("Hallo",monumenten.get(i).getNaam());
             LatLng objLocation = new LatLng(monumenten.get(i).getLatitude(), monumenten.get(i).getLongitude());
-            mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name)).snippet(monumenten.get(i).getNaam()));
+            mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam()).snippet(monumenten.get(i).getNaam()));
         }
 
 
