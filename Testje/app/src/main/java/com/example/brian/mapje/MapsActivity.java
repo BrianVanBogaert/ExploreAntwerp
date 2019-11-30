@@ -43,10 +43,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     List<InfoWindowData> monumenten;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        monumenten = new ArrayList<>();
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_maps);
 
+        monumenten = new ArrayList<>();
         //====================LOCATIE OPVRAGEN========================
         // Construct a GeoDataClient.
         RequestQueue gerequest=Volley.newRequestQueue(this); //REST API voor THIS activity
@@ -95,10 +93,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                                     Log.i("Hey object",monumenten.get(i).getNaam());
                                 }
-
-
                             }
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -110,11 +105,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         error.printStackTrace();
                     }
                 }
-
         );
-
         gerequest.add(objectRequest);
 
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_maps);
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -157,11 +152,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         m.showInfoWindow();
 
 
-        for (Object object : monumenten)
-        {
-            MarkerOptions objectoption = new MarkerOptions();
-            
 
+        Log.i("Size op dit moment", String.valueOf(monumenten.size())); //Volgens logs: 0???
+        for (int i = 0; i < monumenten.size(); i++)
+        {
+            LatLng objLocation = new LatLng(monumenten.get(i).getLatitude(), monumenten.get(i).getLongitude());
+            mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam()).icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name)).snippet(monumenten.get(i).getNaam()));
         }
 
 
@@ -175,4 +171,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     public void onInfoWindowClick(Marker marker) { //zelf nog toe te voegen bij extends https://youtu.be/v4BrNgTEI6E?t=622
 
     }
+
+
 }
