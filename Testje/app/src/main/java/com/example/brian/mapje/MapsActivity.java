@@ -11,6 +11,7 @@ import android.content.Context;
 import android.view.textclassifier.TextLinks;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -151,19 +152,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         m.showInfoWindow();
 
 
+        //============ MARKERS ADDEN =====================
+       AddMarkers();
 
-        Log.i("Size op dit moment", String.valueOf(monumenten.size())); //19 test markers
-        for (int i = 0; i < 20; i++)
-        {
-             LatLng objLocation = new LatLng(monumenten.get(i).getLatitude(), monumenten.get(i).getLongitude());
-           // InfoWindowData objectInfo = new InfoWindowData();
-            //objectInfo.setHotel(monumenten.get(i).getBeschrijving());
-            //CustomInfoWindowGoogleMap ObjectInfoWindow = new CustomInfoWindowGoogleMap(this);
-            //mMap.setInfoWindowAdapter(ObjectInfoWindow);
-             mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam())); //no rocket science
-            //o.setTag(objectInfo);
-            //o.showInfoWindow();
-        }
 
 
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
@@ -175,6 +166,33 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onInfoWindowClick(Marker marker) { //zelf nog toe te voegen bij extends https://youtu.be/v4BrNgTEI6E?t=622
 
+    }
+
+    public void AddMarkers()
+    {
+        Log.i("Size op dit moment", String.valueOf(monumenten.size())); //19 test markers
+        if (monumenten.size() != 0)
+        {
+            for (int i = 0; i < 20; i++)
+            {
+                LatLng objLocation = new LatLng(monumenten.get(i).getLatitude(), monumenten.get(i).getLongitude());
+                // InfoWindowData objectInfo = new InfoWindowData();
+                //objectInfo.setHotel(monumenten.get(i).getBeschrijving());
+                //CustomInfoWindowGoogleMap ObjectInfoWindow = new CustomInfoWindowGoogleMap(this);
+                //mMap.setInfoWindowAdapter(ObjectInfoWindow);
+                mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam())); //no rocket science
+                //o.setTag(objectInfo);
+                //o.showInfoWindow();
+            }
+        }
+        else
+        {
+            Toast toast = Toast.makeText(getApplicationContext(),
+                    "Ik heb geen data opgehaald",
+                    Toast.LENGTH_LONG);
+
+            toast.show();
+        }
     }
 
 
