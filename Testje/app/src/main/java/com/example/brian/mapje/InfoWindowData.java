@@ -1,8 +1,10 @@
 package com.example.brian.mapje;
 
 
+import java.io.Serializable;
+
 //========= Hier worden alle gegevens opgeslagen van elke WindowData =================
-public class InfoWindowData
+public class InfoWindowData implements Serializable
 {
     private String image;
     private String hotel;
@@ -12,25 +14,25 @@ public class InfoWindowData
     private double latitude;
 
 
-    public String getImage() {
-        return image;
-    }
-    public void setImage(String image) {
-        this.image = image;
-    }
+   // public String getImage() {
+   //     return image;
+   // }
+   // public void setImage(String image) {
+   //     this.image = image;
+    // }
 
-    public String getHotel() {
-        return hotel;
-    }
-    public void setHotel(String hotel) {
-        this.hotel = hotel;
-    }
+   // public String getHotel() {
+   //     return hotel;
+    // }
+    // public void setHotel(String hotel) {
+    //    this.hotel = hotel;
+    // }
 
     public String getBeschrijving() {
         return beschrijving;
     }
     public void setBeschrijving(String beschrijving) {
-        this.hotel = beschrijving;
+        this.beschrijving = beschrijving;
     }
 
     public String getNaam() {

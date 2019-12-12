@@ -3,6 +3,8 @@ package com.example.brian.mapje;
 import androidx.fragment.app.FragmentActivity;
 
 import android.app.VoiceInteractor;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +20,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.RequestFuture;
 import com.android.volley.toolbox.Volley;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -40,74 +43,17 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
 
     private GoogleMap mMap;
+    private boolean IsReady = false;
+
 
     List<InfoWindowData> monumenten;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        monumenten = new ArrayList<>();
-        //====================LOCATIE OPVRAGEN========================
-        // Construct a GeoDataClient.
-        RequestQueue gerequest=Volley.newRequestQueue(this); //REST API voor THIS activity
+        Intent intent = getIntent();
+        monumenten = (List<InfoWindowData>) intent.getSerializableExtra("LIST");
+        //monumenten = new ArrayList<>();
 
-        String URL = "https://geodata.antwerpen.be/arcgissql/rest/services/P_Portal/portal_publiek3/MapServer/207/query?where=1%3D1&outFields=Naam,BeschermingDetails&outSR=4326&f=json";
-        //BELANGRIJK!!!
-        //copy de code in http://jsonviewer.stack.hu om de structuur van deze json te zien
-
-        JsonObjectRequest objectRequest = new JsonObjectRequest(
-                Request.Method.GET,
-                URL,
-                null,
-                new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                            Log.i("Rest response", response.toString()); //Dit werkt
-                        try {
-                            JSONArray jsonFeatureArray = response.getJSONArray("features"); //features is de grootste table waar we in moeten zoeken (zie jsonviewer.stack.hu)
-                            for(int i = 0; i < jsonFeatureArray.length(); i++)
-                            {
-                                InfoWindowData object= new InfoWindowData();
-                                JSONObject feature = jsonFeatureArray.getJSONObject(i); //we vragen elk object op
-                                //============== ATTRIBUTES OPVRAGEN MET DE NAAM EN DE BESCHRIJVING ========================
-                                JSONObject attributeObject = feature.getJSONObject("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
-                                    String Naam = attributeObject.getString("Naam"); //met elks hun naam (zie jsonviewer.stack.hu)
-                                if(Naam != "huis") //ik wil geen 100 000 huizen
-                                {
-                                    Log.i("Het monument", Naam);
-                                    String BeschermingDetails = attributeObject.getString("BeschermingDetails");
-                                    Log.i("Details", BeschermingDetails);
-                                    //============== GEO OPVRAGEN  ========================
-                                    JSONObject GeoObject = feature.getJSONObject("geometry");
-                                    JSONArray VerzamelArray = GeoObject.getJSONArray("rings");
-                                    JSONArray EersteGeoArray = VerzamelArray.getJSONArray(0).getJSONArray(0);
-
-                                    Double Long = EersteGeoArray.getDouble(0);
-                                    Log.i("Long", String.valueOf(Long));
-                                    Double Lat = EersteGeoArray.getDouble(1);
-                                    Log.i("Lat", String.valueOf(Lat));
-
-                                    object.setNaam(Naam);
-                                    object.setBeschrijving(BeschermingDetails);
-                                    object.setLongitude(Long);
-                                    object.setLatitude(Lat);
-                                    monumenten.add(object);
-
-                                    Log.i("Hey object",monumenten.get(i).getNaam());
-                                }
-                            }
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        error.printStackTrace();
-                    }
-                }
-        );
-        gerequest.add(objectRequest);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
@@ -141,8 +87,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .icon(BitmapDescriptorFactory.defaultMarker( BitmapDescriptorFactory.HUE_RED));
 
         InfoWindowData masinfo = new InfoWindowData();
-        masinfo.setImage("masfoto");
-        masinfo.setHotel("Hotel : kei goei hotels in de buurt");
+        //masinfo.setImage("masfoto");
+       // masinfo.setHotel("Hotel : kei goei hotels in de buurt");
 
 
         CustomInfoWindowGoogleMap customInfoWindow = new CustomInfoWindowGoogleMap(this);
@@ -153,6 +99,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
         //============ MARKERS ADDEN =====================
+
        AddMarkers();
 
 
@@ -160,11 +107,16 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
         //mMap.addMarker(new MarkerOptions().position(mas).title("Dit is het mas"));
         //mMap.addMarker(new MarkerOptions().position(steen).title("Dit is het steen").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name)).snippet("Dit is nog wa meer zever"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(mas));
+        float zoomLevel = 10.0f;
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mas, zoomLevel ));
     }
 
     @Override
     public void onInfoWindowClick(Marker marker) { //zelf nog toe te voegen bij extends https://youtu.be/v4BrNgTEI6E?t=622
+
+        Toast toast = Toast.makeText(getApplicationContext(),
+                "klik klik",
+                Toast.LENGTH_LONG);
 
     }
 
@@ -188,7 +140,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         else
         {
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "Ik heb geen data opgehaald",
+                    "error",
                     Toast.LENGTH_LONG);
 
             toast.show();
@@ -196,4 +148,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     }
 
 
+    public void Zoek(View view)
+    {
+
+
+    }
 }

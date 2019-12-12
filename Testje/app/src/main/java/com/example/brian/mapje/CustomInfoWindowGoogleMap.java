@@ -31,20 +31,24 @@ public class CustomInfoWindowGoogleMap implements GoogleMap.InfoWindowAdapter
         TextView details_tv = view.findViewById(R.id.details);
         ImageView img = view.findViewById(R.id.pic);
 
-        TextView hotel_tv = view.findViewById(R.id.hotels);
+       // TextView hotel_tv = view.findViewById(R.id.hotels);
 
 
 
         name_tv.setText(marker.getTitle());
-        details_tv.setText(marker.getSnippet());
+       // details_tv.setText(marker.getSnippet());
 
         InfoWindowData infoWindowData = (InfoWindowData) marker.getTag();
 
-        int imageId = context.getResources().getIdentifier(infoWindowData.getImage().toLowerCase(),
-                "drawable", context.getPackageName());
-        img.setImageResource(imageId);
 
-        hotel_tv.setText(infoWindowData.getHotel());
+//            details_tv.setText(infoWindowData.getBeschrijving());
+
+
+//        int imageId = context.getResources().getIdentifier(infoWindowData.getImage().toLowerCase(),
+  //              "drawable", context.getPackageName());
+    //    img.setImageResource(imageId);
+
+     //   hotel_tv.setText(infoWindowData.getHotel());
         return view;
     }
 }
