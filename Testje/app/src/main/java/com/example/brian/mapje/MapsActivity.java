@@ -40,20 +40,19 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener, GoogleMap.OnMarkerClickListener {
 
     private GoogleMap mMap;
-    private boolean IsReady = false;
-
 
     List<InfoWindowData> monumenten;
+    CustomInfoWindowGoogleMap customInfoWindow;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
+        customInfoWindow = new CustomInfoWindowGoogleMap(this);
         Intent intent = getIntent();
         monumenten = (List<InfoWindowData>) intent.getSerializableExtra("LIST");
-        //monumenten = new ArrayList<>();
-
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
@@ -63,60 +62,48 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
-
-    /**
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
     @Override
     public void onMapReady(GoogleMap googleMap)
     {
         mMap = googleMap;
-
+        mMap.setOnMarkerClickListener(this);
+        mMap.setOnInfoWindowClickListener(this);
+        mMap.setInfoWindowAdapter(customInfoWindow);
         LatLng mas = new LatLng(51.2289, 4.4048203);
 
-        MarkerOptions markerOptionsMas = new MarkerOptions();
-        markerOptionsMas.position(mas)
-                .title("MAS ANTWERPEN")
-                .snippet("Het mas is een museum over de stad en de haven van Antwerpen Het heeft 10 verdiepingen en een indrukwekkende architectuur. De prijs voor een kaartje is dan ook niet te duur. Rijmen is fijn maar bezoeken zou plezanter zijn")
-                .icon(BitmapDescriptorFactory.defaultMarker( BitmapDescriptorFactory.HUE_RED));
-
-        InfoWindowData masinfo = new InfoWindowData();
+//        MarkerOptions markerOptionsMas = new MarkerOptions();
+//        markerOptionsMas.position(mas)
+//                .title("MAS ANTWERPEN")
+//                .snippet("Het mas is een museum over de stad en de haven van Antwerpen Het heeft 10 verdiepingen en een indrukwekkende architectuur. De prijs voor een kaartje is dan ook niet te duur. Rijmen is fijn maar bezoeken zou plezanter zijn")
+//                .icon(BitmapDescriptorFactory.defaultMarker( BitmapDescriptorFactory.HUE_RED));
+//
+//        InfoWindowData masinfo = new InfoWindowData();
         //masinfo.setImage("masfoto");
        // masinfo.setHotel("Hotel : kei goei hotels in de buurt");
 
-
-        CustomInfoWindowGoogleMap customInfoWindow = new CustomInfoWindowGoogleMap(this);
-        mMap.setInfoWindowAdapter(customInfoWindow);
-        Marker m = mMap.addMarker(markerOptionsMas);
-        m.setTag(masinfo);
-        m.showInfoWindow();
+//        Marker m = mMap.addMarker(markerOptionsMas);
+//        m.setTag(masinfo);
+//        m.showInfoWindow();
 
 
-        //============ MARKERS ADDEN =====================
+        //========================================== MARKERS ADDEN ============================================
 
        AddMarkers();
 
-
-
-        //mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        //mMap.addMarker(new MarkerOptions().position(mas).title("Dit is het mas"));
         //mMap.addMarker(new MarkerOptions().position(steen).title("Dit is het steen").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name)).snippet("Dit is nog wa meer zever"));
         float zoomLevel = 10.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mas, zoomLevel ));
     }
 
     @Override
-    public void onInfoWindowClick(Marker marker) { //zelf nog toe te voegen bij extends https://youtu.be/v4BrNgTEI6E?t=622
+    public void onInfoWindowClick(Marker marker)
+    { //zelf nog toe te voegen bij extends https://youtu.be/v4BrNgTEI6E?t=622
 
-        Toast toast = Toast.makeText(getApplicationContext(),
-                "klik klik",
-                Toast.LENGTH_LONG);
+        Log.i("infowindow", "hello window");
+
+
+    
+
 
     }
 
@@ -125,14 +112,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Log.i("Size op dit moment", String.valueOf(monumenten.size())); //19 test markers
         if (monumenten.size() != 0)
         {
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 80; i++)
             {
                 LatLng objLocation = new LatLng(monumenten.get(i).getLatitude(), monumenten.get(i).getLongitude());
                 // InfoWindowData objectInfo = new InfoWindowData();
                 //objectInfo.setHotel(monumenten.get(i).getBeschrijving());
                 //CustomInfoWindowGoogleMap ObjectInfoWindow = new CustomInfoWindowGoogleMap(this);
                 //mMap.setInfoWindowAdapter(ObjectInfoWindow);
-                mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam())); //no rocket science
+                mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam())).setTag(monumenten.get(i));
                 //o.setTag(objectInfo);
                 //o.showInfoWindow();
             }
@@ -140,17 +127,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         else
         {
             Toast toast = Toast.makeText(getApplicationContext(),
-                    "error",
+                    "Oops, foutje! Herstart de app",
                     Toast.LENGTH_LONG);
-
             toast.show();
         }
     }
 
-
-    public void Zoek(View view)
+    @Override
+    public boolean onMarkerClick(Marker marker)
     {
-
-
+        return false;
     }
 }

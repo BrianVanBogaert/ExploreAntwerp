@@ -116,7 +116,7 @@ public class LoadActivity extends AppCompatActivity
                                 JSONObject attributeObject = feature.getJSONObject("attributes"); //in features steken atrributes (zie jsonviewer.stack.hu)
                                 String Naam = attributeObject.getString("Naam"); //met elks hun naam (zie jsonviewer.stack.hu)
                                 Double Oppervlakte = attributeObject.getDouble("shape_Area");
-                                if( Oppervlakte > 5000 && !Naam.matches("huis")) //ik wil de grootste monumenten en geen huizen
+                                if( Oppervlakte > 4000 && !Naam.matches("huis")) //ik wil de grootste monumenten en geen huizen
                                 {
 
                                     Log.i("Het monument", Naam);
@@ -137,7 +137,6 @@ public class LoadActivity extends AppCompatActivity
                                     object.setLongitude(Long);
                                     object.setLatitude(Lat);
                                     monumenten.add(object);
-
                                    // Log.i("Hey object",monumenten.get(i).getNaam());
                                 }
                             }

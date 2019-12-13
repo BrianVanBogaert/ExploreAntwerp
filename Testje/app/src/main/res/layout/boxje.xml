@@ -23,6 +23,16 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         />
+
+    <TextView
+        android:id="@+id/hotels"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/customfont"
+        android:text="Beschermde delen van dit gebouw:"
+        android:textColor="#c2185b" />
+
     <TextView
         android:id="@+id/details"
         android:fontFamily="@font/customfont"
@@ -32,15 +42,6 @@
         android:singleLine="false"
         android:layout_marginTop="8dp"
     />
-    <TextView
-        android:id="@+id/hotels"
-        android:fontFamily="@font/customfont"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="nog details"
-        android:layout_marginTop="8dp"
-        android:textColor="#c2185b"
-     />
 
     <Button
         android:id="@+id/NavigatieButton"
