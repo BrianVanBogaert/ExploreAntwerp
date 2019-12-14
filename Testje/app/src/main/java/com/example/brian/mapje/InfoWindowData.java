@@ -56,8 +56,4 @@ public class InfoWindowData implements Serializable
         this.latitude = latitude;
     }
 
-
-
-
-
 }

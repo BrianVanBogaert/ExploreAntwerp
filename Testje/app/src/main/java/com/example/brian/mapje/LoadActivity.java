@@ -7,11 +7,13 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -39,6 +41,7 @@ public class LoadActivity extends AppCompatActivity
     TextView Title;
     TextView Beschrijving;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -53,7 +56,7 @@ public class LoadActivity extends AppCompatActivity
         img.setImageResource(R.drawable.logo);
         img.startAnimation(FadeIn);
 
-        // ======================================== CONNECTION CHECK ====================================================================
+        // ======================================== CONNECTION CHECK + OPHALEN DATA ====================================================================
         boolean connected = false;
         ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(this.CONNECTIVITY_SERVICE);
         if(connectivityManager.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED ||
@@ -72,9 +75,12 @@ public class LoadActivity extends AppCompatActivity
         }
     }
 
-
+    // ======================================== KLIK LADEN ====================================================================
     public void LoadMap(View view)
     {
+        Button LaadKnop =  findViewById(R.id.loadButton);
+        LaadKnop.setBackground(getDrawable(R.drawable.circle_button_clicked));
+
         String text = "hello";
         Animation FadeOut = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
         img.startAnimation(FadeOut);
@@ -86,8 +92,6 @@ public class LoadActivity extends AppCompatActivity
         intent.putExtra("LIST", (Serializable) monumenten); //hier geven we de lijst van monumenten mee aan de volgende activity
         startActivity(intent);
     }
-
-
 
     private void DataOphalen()
     {
@@ -154,5 +158,20 @@ public class LoadActivity extends AppCompatActivity
                 }
         );
         gerequest.add(objectRequest);
+    }
+
+    public void webKlik(View view)
+    {
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW,
+                Uri.parse("http://www.visitantwerpen.be"));
+        startActivity(browserIntent);
+    }
+
+    public void toerismeKlik(View view)
+    {
+        Uri gmmIntentUri = Uri.parse("geo:51.2194475,4.4024643?q=Toeristische Dienst");
+        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+        mapIntent.setPackage("com.google.android.apps.maps");
+        startActivity(mapIntent);
     }
 }

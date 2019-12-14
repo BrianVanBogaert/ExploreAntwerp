@@ -21,17 +21,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/loadButton"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="92dp"
         android:layout_weight="1"
+        android:fontFamily="@font/customfont"
         android:onClick="LoadMap"
-        android:text="Laad map"
+        android:text="Naar de kaart!"
+        android:background="@drawable/circle_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -52,7 +54,7 @@
         android:text="Explore Antwerp"
         android:textColor="@android:color/holo_orange_light"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/loadButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo"
@@ -61,19 +63,48 @@
     <TextView
         android:id="@+id/beschrijving"
         android:layout_width="376dp"
-        android:layout_height="136dp"
+        android:layout_height="65dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:gravity="center"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="Ontdek het rijke bouwkundig erfgoed van de stad Antwerpen. Sommige plekken zijn zo bijzonder, zo adembenemend of uniek, dat je ze moet gezien hebben."
         android:fontFamily="@font/customfont"
+        android:gravity="center"
+        android:text="Ontdek het rijke bouwkundig erfgoed van de stad Antwerpen. Sommige plekken zijn zo bijzonder, zo adembenemend of uniek, dat je ze moet gezien hebben."
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titel" />
+
+    <Button
+        android:id="@+id/buttonToerism"
+        android:layout_width="154dp"
+        android:layout_height="38dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/customfont"
+        android:text="Dienst Toerisme"
+        android:onClick="toerismeKlik"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonWeb"
+        android:layout_width="149dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/customfont"
+        android:text="VistAntwerp.be"
+        android:onClick="webKlik"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -97,14 +97,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     public void onInfoWindowClick(Marker marker)
-    { //zelf nog toe te voegen bij extends https://youtu.be/v4BrNgTEI6E?t=622
-
-        Log.i("infowindow", "hello window");
-
-
-    
-
-
+    {
+       LatLng ClickPos = marker.getPosition();
+       String ClickPosString = String.valueOf(ClickPos);            //output: lat/lng:(xxxxxxxx,yyyyyy);
+        String replacedPos = ClickPosString.replace("lat/lng:","");      //gooit alle brol weg
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                Uri.parse("geo:0,0?q="+replacedPos));
+        startActivity(intent);
     }
 
     public void AddMarkers()
@@ -115,13 +114,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             for (int i = 0; i < 80; i++)
             {
                 LatLng objLocation = new LatLng(monumenten.get(i).getLatitude(), monumenten.get(i).getLongitude());
-                // InfoWindowData objectInfo = new InfoWindowData();
-                //objectInfo.setHotel(monumenten.get(i).getBeschrijving());
-                //CustomInfoWindowGoogleMap ObjectInfoWindow = new CustomInfoWindowGoogleMap(this);
-                //mMap.setInfoWindowAdapter(ObjectInfoWindow);
                 mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam())).setTag(monumenten.get(i));
-                //o.setTag(objectInfo);
-                //o.showInfoWindow();
+
             }
         }
         else
