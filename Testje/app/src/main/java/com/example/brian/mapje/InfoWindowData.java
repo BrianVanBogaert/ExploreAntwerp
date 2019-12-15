@@ -1,6 +1,8 @@
 package com.example.brian.mapje;
 
 
+import com.google.android.gms.maps.model.LatLng;
+
 import java.io.Serializable;
 
 //========= Hier worden alle gegevens opgeslagen van elke WindowData =================
@@ -12,6 +14,7 @@ public class InfoWindowData implements Serializable
     private String naam;
     private double longitude;
     private double latitude;
+
 
 
    // public String getImage() {

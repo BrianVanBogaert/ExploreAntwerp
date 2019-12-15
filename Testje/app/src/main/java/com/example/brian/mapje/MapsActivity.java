@@ -52,7 +52,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener, GoogleMap.OnMyLocationChangeListener {
 
     private GoogleMap mMap;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
@@ -60,6 +60,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
     List<InfoWindowData> monumenten;
+    List<LatLng> LatsLngs;
     CustomInfoWindowGoogleMap customInfoWindow;
 
     @Override
@@ -85,6 +86,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
         mMap.setOnMyLocationButtonClickListener(onMyLocationButtonClickListener);
         mMap.setOnMyLocationClickListener(onMyLocationClickListener);
+        mMap.setOnMyLocationChangeListener(this);
         enableMyLocationIfPermitted();
         mMap.setOnInfoWindowClickListener(this);
         mMap.setInfoWindowAdapter(customInfoWindow);
@@ -147,6 +149,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+// ==================================== LOCATIE TONEN (en permit) http://bit.do/fkRs3 ==================================================
 
     private void enableMyLocationIfPermitted() {
         if (ContextCompat.checkSelfPermission(this,
@@ -214,6 +217,23 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 }
             };
 
+// ==================================== CHECK COLISSIONS ==================================================
+
+    @Override
+    public void onMyLocationChange(Location location) {
+        Location target = new Location("target");
 
 
+
+   LatLng POINTA = new LatLng(51,4);
+
+        for(LatLng point : new LatLng[]{POINTA}) {
+            target.setLatitude(point.latitude);
+            target.setLongitude(point.longitude);
+            if(location.distanceTo(target) < 20)
+            {
+                Log.i("HEY GE BENT VLAKBIJ", "HEY GE BENT VLAKBIJ");
+            }
+        }
+    }
 }
