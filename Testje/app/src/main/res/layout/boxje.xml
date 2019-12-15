@@ -43,13 +43,7 @@
         android:layout_marginTop="8dp"
     />
 
-    <Button
-        android:id="@+id/NavigatieButton"
-        android:layout_width="128dp"
-        android:layout_height="wrap_content"
-        android:onClick="Zoek"
-        android:tag="@+id/name"
-        android:text="NAVIGEER" />
+
 
 
 </LinearLayout>
