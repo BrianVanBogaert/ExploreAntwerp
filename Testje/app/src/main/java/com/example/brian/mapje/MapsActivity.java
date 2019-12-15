@@ -113,7 +113,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
        AddMarkers();
 
         //mMap.addMarker(new MarkerOptions().position(steen).title("Dit is het steen").icon(BitmapDescriptorFactory.fromResource(R.drawable.ic_action_name)).snippet("Dit is nog wa meer zever"));
-        float zoomLevel = 10.0f;
+        float zoomLevel = 12.0f;
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mas, zoomLevel ));
     }
 
@@ -133,7 +133,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Log.i("Size op dit moment", String.valueOf(monumenten.size())); //19 test markers
         if (monumenten.size() != 0)
         {
-            for (int i = 0; i < 80; i++)
+            for (int i = 0; i < monumenten.size() ; i++)
             {
                 LatLng objLocation = new LatLng(monumenten.get(i).getLatitude(), monumenten.get(i).getLongitude());
                 mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam())).setTag(monumenten.get(i));
