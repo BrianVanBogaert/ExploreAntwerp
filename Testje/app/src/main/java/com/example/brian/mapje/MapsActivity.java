@@ -8,12 +8,14 @@ import androidx.fragment.app.FragmentActivity;
 import android.Manifest;
 import android.app.VoiceInteractor;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.location.Location;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
 import android.app.Activity;
@@ -60,11 +62,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private int AantalBezocht = 0;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     List<InfoWindowData> monumenten;
-    List<LatLng> LatsLngs;
+
+
+    static SharedPreferences settings;
+    static SharedPreferences.Editor editor;
     CustomInfoWindowGoogleMap customInfoWindow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        
 
         customInfoWindow = new CustomInfoWindowGoogleMap(this);
         Intent intent = getIntent();
@@ -244,6 +250,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
     }
+
+
 
     // ================================ STYLING ====================================
 
