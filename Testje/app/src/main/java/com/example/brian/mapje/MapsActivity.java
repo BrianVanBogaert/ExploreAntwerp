@@ -70,7 +70,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        
+
 
         customInfoWindow = new CustomInfoWindowGoogleMap(this);
         Intent intent = getIntent();
