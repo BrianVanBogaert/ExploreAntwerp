@@ -81,11 +81,8 @@ public class LoadActivity extends AppCompatActivity
         Button LaadKnop =  findViewById(R.id.loadButton);
         LaadKnop.setBackground(getDrawable(R.drawable.circle_button_clicked));
 
-        String text = "hello";
         Animation FadeOut = AnimationUtils.loadAnimation(getApplicationContext(),R.anim.fade_out);
         img.startAnimation(FadeOut);
-        Title = (TextView) findViewById(R.id.titel);
-        Title.setText("Laden...");
         Beschrijving = (TextView) findViewById(R.id.beschrijving);
         Beschrijving.startAnimation(FadeOut);
         Intent intent = new Intent(this, MapsActivity.class);

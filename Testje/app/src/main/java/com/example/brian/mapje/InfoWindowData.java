@@ -14,6 +14,7 @@ public class InfoWindowData implements Serializable
     private String naam;
     private double longitude;
     private double latitude;
+    private  boolean albezocht = false;
 
 
 
@@ -57,6 +58,12 @@ public class InfoWindowData implements Serializable
     }
     public void setLatitude(double latitude) {
         this.latitude = latitude;
+    }
+
+    public boolean getAlBezocht() {
+        return albezocht;
+    }
+    public void setAlbezocht(boolean albezocht) { this.albezocht = albezocht;
     }
 
 }

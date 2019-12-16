@@ -57,10 +57,8 @@ import java.util.List;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener, GoogleMap.OnMyLocationChangeListener {
 
     private GoogleMap mMap;
+    private int AantalBezocht = 0;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
-
-
-
     List<InfoWindowData> monumenten;
     List<LatLng> LatsLngs;
     CustomInfoWindowGoogleMap customInfoWindow;
@@ -139,8 +137,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             for (int i = 0; i < monumenten.size() ; i++)
             {
                 LatLng objLocation = new LatLng(monumenten.get(i).getLatitude(), monumenten.get(i).getLongitude());
-                mMap.addMarker(new MarkerOptions().position(objLocation).title(monumenten.get(i).getNaam())).setTag(monumenten.get(i));
-
+                mMap.addMarker(new MarkerOptions()
+                        .position(objLocation)
+                        .title(monumenten.get(i).getNaam()))
+                        .setTag(monumenten.get(i))
+                ;
             }
         }
         else
@@ -223,21 +224,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 // ==================================== CHECK COLISSIONS ==================================================
 
     @Override
-    public void onMyLocationChange(Location location) {
+    public void onMyLocationChange(Location location)
+    {
+
         Location target = new Location("target");
+        for (int i = 0; i < monumenten.size(); ++i)
+        {
+            target.setLatitude(monumenten.get(i).getLatitude());
+            target.setLongitude(monumenten.get(i).getLongitude());
 
-
-
-   LatLng POINTA = new LatLng(51,4);
-
-        for(LatLng point : new LatLng[]{POINTA}) {
-            target.setLatitude(point.latitude);
-            target.setLongitude(point.longitude);
-            if(location.distanceTo(target) < 20)
+            if(location.distanceTo(target) < 500 && monumenten.get(i).getAlBezocht() == false)
             {
-                Log.i("HEY GE BENT VLAKBIJ", "HEY GE BENT VLAKBIJ");
+                Log.i("HEY GE BENT VLAKBIJ", "een monument");
+                AantalBezocht++;
+                monumenten.get(i).setAlbezocht(true);
+                TextView bottomtext = (TextView) findViewById(R.id.bottomtext);
+                bottomtext.setText(AantalBezocht + " monumenten bezocht");
             }
         }
+
     }
 
     // ================================ STYLING ====================================
@@ -249,7 +254,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             // in a raw resource file.
             boolean success = mMap.setMapStyle(
                     MapStyleOptions.loadRawResourceStyle(
-                            this, R.raw.mapstyle));
+                            this, R.raw.mapstyle)); //eigen custom JSON style voor google maps
 
             if (!success) {
                 Log.e("Error", "Style parsing failed.");
