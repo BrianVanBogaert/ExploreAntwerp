@@ -62,6 +62,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private int AantalBezocht = 0;
     private static final int LOCATION_PERMISSION_REQUEST_CODE = 1;
     List<InfoWindowData> monumenten;
+    private DatabaseHelper mDB;
 
 
     static SharedPreferences settings;
@@ -75,6 +76,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         customInfoWindow = new CustomInfoWindowGoogleMap(this);
         Intent intent = getIntent();
         monumenten = (List<InfoWindowData>) intent.getSerializableExtra("LIST");
+        mDB = new DatabaseHelper(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
@@ -82,6 +84,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+    }
+
+
+    @Override
+    public void onBackPressed() {
+        Intent StappenActivity = new Intent(this, StappenActivity.class);
+        startActivity(StappenActivity);
     }
 
 
@@ -246,6 +255,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 monumenten.get(i).setAlbezocht(true);
                 TextView bottomtext = (TextView) findViewById(R.id.bottomtext);
                 bottomtext.setText(AantalBezocht + " monumenten bezocht");
+                mDB.updateVisitedMonuments(AantalBezocht);
             }
         }
 
