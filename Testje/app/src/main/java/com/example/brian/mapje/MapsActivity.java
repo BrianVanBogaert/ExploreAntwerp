@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Color;
 import android.location.Location;
 import android.net.Uri;
@@ -72,11 +73,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-
         customInfoWindow = new CustomInfoWindowGoogleMap(this);
         Intent intent = getIntent();
         monumenten = (List<InfoWindowData>) intent.getSerializableExtra("LIST");
         mDB = new DatabaseHelper(this);
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
@@ -252,8 +253,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             {
                 Log.i("HEY GE BENT VLAKBIJ", "een monument");
                 AantalBezocht++;
+
+
                 monumenten.get(i).setAlbezocht(true);
                 TextView bottomtext = (TextView) findViewById(R.id.bottomtext);
+
+
                 bottomtext.setText(AantalBezocht + " monumenten bezocht");
                 mDB.updateVisitedMonuments(AantalBezocht);
             }
