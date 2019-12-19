@@ -242,7 +242,8 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMyLocationChange(Location location)
     {
-
+        Cursor res = mDB.getAllData();
+        String score="";
         Location target = new Location("target");
         for (int i = 0; i < monumenten.size(); ++i)
         {
@@ -262,6 +263,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 bottomtext.setText(AantalBezocht + " monumenten bezocht");
                 mDB.updateVisitedMonuments(AantalBezocht);
             }
+        }
+
+        // de string score kunt ge nu in een textview zetten als ge wilt
+        while (res.moveToNext()){
+            score = ("Score :" +res.getString(2) );
         }
 
     }
